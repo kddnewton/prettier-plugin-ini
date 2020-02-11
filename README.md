@@ -1,4 +1,4 @@
-<h1 align="center">Prettier for INI</h1>
+<h1 align="center">Prettier for INI files</h1>
 
 <p align="center">
   <a href="https://gitter.im/jlongster/prettier">
@@ -18,7 +18,7 @@
   </a>
 </p>
 
-`@prettier/plugin-ini` is a [prettier](https://prettier.io/) plugin for INI. `prettier` is an opinionated code formatter that supports multiple languages and integrates with most editors. The idea is to eliminate discussions of style in code review and allow developers to get back to thinking about code design instead.
+`@prettier/plugin-ini` is a [prettier](https://prettier.io/) plugin for INI files. `prettier` is an opinionated code formatter that supports multiple languages and integrates with most editors. The idea is to eliminate discussions of style in code review and allow developers to get back to thinking about code design instead.
 
 ## Getting started
 
