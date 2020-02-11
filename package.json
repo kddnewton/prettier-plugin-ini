@@ -1,0 +1,34 @@
+{
+  "name": "@prettier/plugin-ini",
+  "version": "0.1.0",
+  "description": "prettier plugin for INI files",
+  "main": "src/plugin.js",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "print": "prettier --plugin=.",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prettier/plugin-ini.git"
+  },
+  "author": "Kevin Deisz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prettier/plugin-ini/issues"
+  },
+  "homepage": "https://github.com/prettier/plugin-ini#readme",
+  "dependencies": {
+    "prettier": ">=1.10"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^25.1.0"
+  },
+  "jest": {
+    "testRegex": ".test.js$"
+  }
+}
