@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/prettier/plugin-ini#readme",
   "dependencies": {
-    "prettier": ">=1.10"
+    "prettier": ">=2.0"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
