@@ -19,6 +19,7 @@ jobs:
           ${{ runner.os }}-yarn-
     - run: yarn install --frozen-lockfile
     - run: yarn lint
+    - run: yarn print --check '**/*'
     - run: yarn test
       env:
         CI: true

@@ -30,5 +30,8 @@
   },
   "jest": {
     "testRegex": ".test.js$"
+  },
+  "prettier": {
+    "trailingComma": "none"
   }
 }
