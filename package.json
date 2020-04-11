@@ -1,5 +1,5 @@
 {
-  "name": "@prettier/plugin-ini",
+  "name": "prettier-plugin-ini",
   "version": "0.1.0",
   "description": "prettier plugin for INI files",
   "main": "src/plugin.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prettier/plugin-ini.git"
+    "url": "git+https://github.com/kddeisz/prettier-plugin-ini.git"
   },
   "author": "Kevin Deisz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prettier/plugin-ini/issues"
+    "url": "https://github.com/kddeisz/prettier-plugin-ini/issues"
   },
-  "homepage": "https://github.com/prettier/plugin-ini#readme",
+  "homepage": "https://github.com/kddeisz/prettier-plugin-ini#readme",
   "dependencies": {
     "prettier": ">=2.0"
   },
