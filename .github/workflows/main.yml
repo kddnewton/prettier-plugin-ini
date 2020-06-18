@@ -4,6 +4,8 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
+    env:
+      CI: true
     steps:
     - uses: actions/checkout@master
     - uses: actions/setup-node@v2-beta
@@ -21,5 +23,3 @@ jobs:
     - run: yarn lint
     - run: yarn print --check '**/*'
     - run: yarn test
-      env:
-        CI: true
