@@ -1,6 +1,6 @@
 const sectionPattern = /^\s*\[\s*([^\]]*)\s*\]\s*$/;
 const paramPattern = /^\s*([^=]+?)\s*=\s*(.*?)\s*$/;
-const commentPattern = /^\s*;.*$/;
+const commentPattern = /^\s*[;#].*$/;
 
 const parse = (text, _parsers, _opts) => {
   const root = { type: "root", value: [] };

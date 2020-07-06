@@ -7,8 +7,8 @@
   <a href="https://github.com/kddeisz/prettier-plugin-ini/actions">
     <img alt="GitHub Actions" src="https://img.shields.io/github/workflow/status/kddeisz/prettier-plugin-ini/Main?style=flat-square">
   </a>
-  <a href="https://www.npmjs.com/package/@prettier/plugin-ini">
-    <img alt="NPM Version" src="https://img.shields.io/npm/v/@prettier/plugin-ini.svg?style=flat-square">
+  <a href="https://www.npmjs.com/package/prettier-plugin-ini">
+    <img alt="NPM Version" src="https://img.shields.io/npm/v/prettier-plugin-ini.svg?style=flat-square">
   </a>
   <a href="#badge">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
@@ -18,7 +18,7 @@
   </a>
 </p>
 
-`@prettier/plugin-ini` is a [prettier](https://prettier.io/) plugin for INI files. `prettier` is an opinionated code formatter that supports multiple languages and integrates with most editors. The idea is to eliminate discussions of style in code review and allow developers to get back to thinking about code design instead.
+`prettier-plugin-ini` is a [prettier](https://prettier.io/) plugin for INI files. `prettier` is an opinionated code formatter that supports multiple languages and integrates with most editors. The idea is to eliminate discussions of style in code review and allow developers to get back to thinking about code design instead.
 
 ## Getting started
 
@@ -27,13 +27,13 @@ To run `prettier` with the INI plugin, you're going to need [`node`](https://nod
 If you're using the `npm` CLI, then add the plugin by:
 
 ```bash
-npm install --save-dev prettier @prettier/plugin-ini
+npm install --save-dev prettier prettier-plugin-ini
 ```
 
 Or if you're using `yarn`, then add the plugin by:
 
 ```bash
-yarn add --dev prettier @prettier/plugin-ini
+yarn add --dev prettier prettier-plugin-ini
 ```
 
 The `prettier` executable is now installed and ready for use:
@@ -44,7 +44,7 @@ The `prettier` executable is now installed and ready for use:
 
 ## Configuration
 
-Below are the options (from [`src/plugin.js`](src/plugin.js)) that `@prettier/plugin-ini` currently supports:
+Below are the options (from [`src/plugin.js`](src/plugin.js)) that `prettier-plugin-ini` currently supports:
 
 | API Option   | CLI Option      | Default | Description                                                                                      |
 | ------------ | --------------- | :-----: | ------------------------------------------------------------------------------------------------ |
@@ -68,7 +68,7 @@ prettier --tab-width 4 --write '**/*.ini'
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/prettier/plugin-ini.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kddeisz/prettier-plugin-ini.
 
 ## License
 
