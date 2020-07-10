@@ -1,6 +1,6 @@
 {
   "name": "prettier-plugin-ini",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "prettier plugin for INI files",
   "main": "src/plugin.js",
   "scripts": {

@@ -26,7 +26,14 @@ const plugin = {
       print
     }
   },
-  options: {},
+  options: {
+    iniSpaceAroundEquals: {
+      type: "boolean",
+      category: "INI",
+      default: false,
+      description: "Adds a space around the equals sign when specifying params."
+    },
+  },
   defaultOptions: {
     printWidth: 80,
     tabWidth: 2

@@ -2,10 +2,11 @@ const { concat, group, hardline, join } = require("prettier/doc").builders;
 
 const nodes = {
   comment: (path, _opts, _print) => path.getValue().value,
-  param: (path, _opts, _print) => {
+  param: (path, opts, _print) => {
     const { key, value } = path.getValue();
+    const delimiter = opts.iniSpaceAroundEquals ? " = " : "=";
 
-    return group(concat([key, "=", value]));
+    return group(concat([key, delimiter, value]));
   },
   root: (path, _opts, print) => {
     const lines = [];
