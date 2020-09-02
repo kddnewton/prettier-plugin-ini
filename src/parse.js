@@ -23,7 +23,7 @@ const parse = (text, _parsers, _opts) => {
       section = { type: "section", name, value: [], lineno };
 
       root.value.push(section);
-    } else if (line.trim().length === 0 && section) {
+    } else if (line.trim().length === 0) {
       section = null;
     } else {
       throw new Error(`Error parsing .ini on line ${lineno}:\n${line}`);
