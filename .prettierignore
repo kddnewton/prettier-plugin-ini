@@ -5,5 +5,5 @@
 /yarn.lock
 /LICENSE
 
-/test/fixture.ini
+/test/fixtures/*
 /test/__snapshots__/*
