@@ -1,6 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`defaults 1`] = `
+exports[`no-sections: defaults 1`] = `
+"; last modified 1 April 2001 by John Doe
+name=John Doe
+organization=Acme Widgets Inc.
+; use IP address in case network name resolution is not working
+server=192.0.2.62
+port=143
+file=\\"payroll.dat\\"
+# this is another kind of comment
+"
+`;
+
+exports[`no-sections: with space around equals 1`] = `
+"; last modified 1 April 2001 by John Doe
+name = John Doe
+organization = Acme Widgets Inc.
+; use IP address in case network name resolution is not working
+server = 192.0.2.62
+port = 143
+file = \\"payroll.dat\\"
+# this is another kind of comment
+"
+`;
+
+exports[`with-sections: defaults 1`] = `
 "; last modified 1 April 2001 by John Doe
 
 [owner]
@@ -16,7 +40,7 @@ file=\\"payroll.dat\\"
 "
 `;
 
-exports[`with space around equals 1`] = `
+exports[`with-sections: with space around equals 1`] = `
 "; last modified 1 April 2001 by John Doe
 
 [owner]
