@@ -19,7 +19,24 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    - run: yarn install --frozen-lockfile
-    - run: yarn lint
-    - run: yarn print --check '**/*'
-    - run: yarn test
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Lint and test
+      run: |
+        yarn lint
+        yarn print --check '**/*'
+        yarn test
+  automerge:
+    name: AutoMerge
+    needs: ci
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && (github.actor == github.repository_owner || github.actor == 'dependabot[bot]')
+    steps:
+    - uses: actions/github-script@v3
+      with:
+        script: |
+          github.pulls.merge({
+            owner: context.payload.repository.owner.login,
+            repo: context.payload.repository.name,
+            pull_number: context.payload.pull_request.number
+          })
