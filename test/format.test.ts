@@ -1,10 +1,19 @@
-const fs = require("fs");
-const path = require("path");
-const prettier = require("prettier");
+import fs from "fs";
+import path from "path";
+import prettier from "prettier";
+
+import { INIOptions } from "../src/printer";
+import plugin from "../src/plugin";
 
 const fixtureFiles = ["with-sections", "no-sections"];
-const format = (content, options) =>
-  prettier.format(content, { parser: "ini", plugins: ["."], ...options });
+
+function format(content: string, options: Partial<INIOptions>) {
+  return prettier.format(content, {
+    parser: "ini",
+    plugins: [plugin],
+    ...options
+  });
+}
 
 fixtureFiles.forEach((fixtureFile) => {
   const fixturePath = path.join(__dirname, "./fixtures/", `${fixtureFile}.ini`);

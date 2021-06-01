@@ -2,9 +2,10 @@
   "name": "prettier-plugin-ini",
   "version": "0.3.1",
   "description": "prettier plugin for INI files",
-  "main": "src/plugin.js",
+  "main": "dist/plugin.js",
   "scripts": {
     "lint": "eslint --cache .",
+    "prepublishOnly": "tsc -p tsconfig.build.json",
     "print": "prettier --plugin=.",
     "test": "jest"
   },
@@ -22,14 +23,46 @@
     "prettier": ">=2.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "@types/prettier": "^2.2.3",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.22.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "jest": "^27.0.1"
+    "jest": "^27.0.1",
+    "ts-jest": "^27.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
   },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "^_"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "dist"
+  ],
   "jest": {
-    "testRegex": ".test.js$"
+    "preset": "ts-jest",
+    "testRegex": ".test.ts$"
   },
   "prettier": {
     "trailingComma": "none"

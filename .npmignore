@@ -4,5 +4,5 @@
 .mergify.yml
 .prettierignore
 bin
+src
 test
-

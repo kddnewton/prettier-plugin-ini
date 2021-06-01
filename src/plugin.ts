@@ -1,10 +1,9 @@
-const parse = require("./parse");
-const print = require("./print");
+import type { Plugin } from "prettier";
 
-const locStart = () => 0;
-const locEnd = () => 0;
+import parser from "./parser";
+import printer from "./printer";
 
-const plugin = {
+const plugin: Plugin = {
   languages: [
     {
       name: "INI",
@@ -14,24 +13,19 @@ const plugin = {
     }
   ],
   parsers: {
-    ini: {
-      parse,
-      astFormat: "ini",
-      locStart,
-      locEnd
-    }
+    ini: parser
   },
   printers: {
-    ini: {
-      print
-    }
+    ini: printer
   },
   options: {
     iniSpaceAroundEquals: {
       type: "boolean",
       category: "INI",
       default: false,
-      description: "Adds a space around the equals sign when specifying params."
+      description:
+        "Adds a space around the equals sign when specifying params.",
+      since: "0.3.0"
     }
   },
   defaultOptions: {
@@ -40,4 +34,4 @@ const plugin = {
   }
 };
 
-module.exports = plugin;
+export default plugin;
