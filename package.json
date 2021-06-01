@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/kddeisz/prettier-plugin-ini.git"
   },
-  "author": "Kevin Deisz",
+  "author": "Kevin Newton",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kddeisz/prettier-plugin-ini/issues"
