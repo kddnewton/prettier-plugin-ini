@@ -65,6 +65,9 @@
     "testRegex": ".test.ts$"
   },
   "prettier": {
+    "plugins": [
+      "."
+    ],
     "trailingComma": "none"
   }
 }
