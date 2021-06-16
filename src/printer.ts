@@ -3,7 +3,7 @@ import { builders } from "prettier/doc";
 
 import type { AST } from "./parser";
 
-const { concat, group, hardline, join } = builders;
+const { group, hardline, join } = builders;
 
 export interface INIOptions extends ParserOptions<AST> {
   iniSpaceAroundEquals: boolean;
@@ -19,27 +19,28 @@ const printer: Printer<AST> = {
       case "param": {
         const delimiter = opts.iniSpaceAroundEquals ? " = " : "=";
 
-        return group(concat([node.key, delimiter, node.value]));
+        return group([node.key, delimiter, node.value]);
       }
       case "root": {
         const lines: Doc[] = [];
 
-        node.value.forEach((node, index) => {
-          let printed = path.call(print, "value", index);
-          if (index > 0 && node.type === "section") {
-            printed = concat([hardline, printed]);
+        path.each((childPath, index) => {
+          const childNode = childPath.getValue();
+
+          if (index > 0 && childNode.type === "section") {
+            lines.push([hardline, print(childPath)]);
+          } else {
+            lines.push(print(childPath));
           }
+        }, "value");
 
-          lines.push(printed);
-        });
-
-        return concat([join(hardline, lines), hardline]);
+        return [join(hardline, lines), hardline];
       }
-      case "section": {
-        const parts: Doc[] = [concat(["[", node.name, "]"])];
-
-        return concat([join(hardline, parts.concat(path.map(print, "value")))]);
-      }
+      case "section":
+        return join(hardline, [
+          ["[", node.name, "]"],
+          ...path.map(print, "value")
+        ]);
       default:
         throw new Error("Unsupported node.");
     }
