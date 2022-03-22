@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.0.0] - 2022-03-22
+
 ### Changed
 
 - Switch over to TypeScript for development.
@@ -34,7 +36,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉
 
-[unreleased]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.3.1...HEAD
+[unreleased]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.3.1...v1.0.0
 [0.3.1]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.1.0...v0.2.0
