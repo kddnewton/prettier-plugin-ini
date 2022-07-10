@@ -81,7 +81,7 @@ get(
       const allLanguages = load(rawText) as Record<string, LinguistLanguage>
 
       fs.writeFileSync(
-        'languages.ts',
+        'src/languages.ts',
         `import { SupportLanguage } from 'prettier'
 
 export const languages: SupportLanguage[] = ${JSON.stringify(
