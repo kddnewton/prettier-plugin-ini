@@ -1,17 +1,11 @@
 import type { Plugin } from "prettier";
 
+import { languages } from "../languages";
 import parser from "./parser";
 import printer from "./printer";
 
 const plugin: Plugin = {
-  languages: [
-    {
-      name: "INI",
-      parsers: ["ini"],
-      extensions: [".ini"],
-      vscodeLanguageIds: ["ini"]
-    }
-  ],
+  languages,
   parsers: {
     ini: parser
   },
