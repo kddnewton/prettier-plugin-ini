@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 
 import LinguistLanguages from "linguist-languages";
 import prettier, { SupportLanguage } from "prettier";
@@ -28,4 +29,11 @@ const source = `import { SupportLanguage } from "prettier";
 const languages: SupportLanguage[] = ${languages};
 export default languages;`;
 
-fs.writeFileSync("src/languages.ts", prettier.format(source, { parser: "typescript" }));
+const packagePath = path.join(path.dirname(__dirname), "package.json");
+const packageConfig = JSON.parse(fs.readFileSync(packagePath, "utf8"));
+const { plugins, ...prettierConfig } = packageConfig.prettier;
+
+fs.writeFileSync(
+  "src/languages.ts",
+  prettier.format(source, { parser: "typescript", ...prettierConfig })
+);
