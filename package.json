@@ -1,13 +1,13 @@
 {
   "name": "prettier-plugin-ini",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "prettier plugin for INI files",
   "main": "dist/plugin.js",
   "types": "dist/plugin.d.ts",
   "scripts": {
     "lint": "eslint --cache .",
     "prepublishOnly": "tsc -p tsconfig.build.json",
-    "prepare": "tsx scripts/languages",
+    "prepare": "tsx bin/languages",
     "print": "prettier --plugin=.",
     "test": "jest"
   },

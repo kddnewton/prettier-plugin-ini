@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.1.0] - 2022-08-12
+
+### Changed
+
+- Use linguist to determine all of the languages this plugin should apply to.
+
 ## [1.0.0] - 2022-03-22
 
 ### Changed
@@ -36,7 +42,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉
 
-[unreleased]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.3.1...v1.0.0
 [0.3.1]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.2.0...v0.3.0
