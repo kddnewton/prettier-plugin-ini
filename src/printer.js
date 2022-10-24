@@ -1,4 +1,4 @@
-const { builders } = require("prettier/doc");
+import { builders } from "prettier/doc";
 
 const { group, hardline, join } = builders;
 
@@ -40,4 +40,4 @@ const printer = {
   }
 };
 
-module.exports = printer;
+export default printer;

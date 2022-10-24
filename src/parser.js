@@ -44,4 +44,4 @@ const parser = {
   }
 };
 
-module.exports = parser;
+export default parser;

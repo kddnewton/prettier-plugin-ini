@@ -2,11 +2,12 @@
   "name": "prettier-plugin-ini",
   "version": "1.1.0",
   "description": "prettier plugin for INI files",
+  "type": "module",
   "main": "src/plugin.js",
   "scripts": {
     "lint": "eslint --cache .",
     "prepare": "node bin/languages.js",
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,8 @@
     "dist"
   ],
   "jest": {
-    "testRegex": ".test.js$"
+    "testRegex": ".test.js$",
+    "transform": {}
   },
   "prettier": {
     "plugins": [

@@ -1,7 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const prettier = require("prettier");
-const plugin = require("../src/plugin");
+import { readFileSync } from "fs";
+import * as prettier from "prettier";
+import plugin from "../src/plugin";
 
 const fixtureFiles = ["with-sections", "no-sections"];
 
@@ -14,8 +13,8 @@ function format(content, opts) {
 }
 
 fixtureFiles.forEach((fixtureFile) => {
-  const fixturePath = path.join(__dirname, "./fixtures/", `${fixtureFile}.ini`);
-  const fixture = fs.readFileSync(fixturePath, "utf-8");
+  const fixturePath = new URL(`./fixtures/${fixtureFile}.ini`, import.meta.url);
+  const fixture = readFileSync(fixturePath, "utf-8");
 
   describe(`${fixtureFile}:`, () => {
     test("defaults", () => {

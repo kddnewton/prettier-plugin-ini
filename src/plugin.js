@@ -1,6 +1,6 @@
-const languages = require("./languages");
-const parser = require("./parser");
-const printer = require("./printer");
+import languages from "./languages";
+import parser from "./parser";
+import printer from "./printer";
 
 const plugin = {
   languages,
@@ -26,4 +26,4 @@ const plugin = {
   }
 };
 
-module.exports = plugin;
+export default plugin;
