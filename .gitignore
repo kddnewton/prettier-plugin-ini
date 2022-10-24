@@ -2,3 +2,4 @@
 /node_modules/
 /dist/
 /src/languages.js
+/yarn-error.log
