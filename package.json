@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --cache .",
     "prepare": "node bin/languages.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
@@ -20,25 +20,30 @@
   },
   "homepage": "https://github.com/kddnewton/prettier-plugin-ini#readme",
   "dependencies": {
-    "prettier": ">=3.0.0-alpha.3"
+    "prettier": "=3.0.0-alpha.2"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.5.0",
     "jest": "^27.0.1",
     "linguist-languages": "^7.21.0"
   },
   "eslintConfig": {
     "env": {
-      "es6": true,
       "node": true,
       "jest": true
     },
     "extends": [
-      "eslint:recommended"
-    ]
+      "eslint:recommended",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    }
   },
   "eslintIgnore": [
-    "dist"
+    "bin"
   ],
   "jest": {
     "testRegex": ".test.js$",
@@ -46,7 +51,7 @@
   },
   "prettier": {
     "plugins": [
-      "."
+      "./src/plugin.js"
     ],
     "trailingComma": "none"
   }

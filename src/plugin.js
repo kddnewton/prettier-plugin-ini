@@ -1,6 +1,6 @@
-import languages from "./languages";
-import parser from "./parser";
-import printer from "./printer";
+import languages from "./languages.js";
+import parser from "./parser.js";
+import printer from "./printer.js";
 
 const plugin = {
   languages,

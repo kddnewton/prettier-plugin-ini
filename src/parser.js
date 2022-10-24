@@ -24,12 +24,12 @@ const parser = {
 
         target.push({ type: "comment", value: line.trim(), lineno });
       } else if ((match = line.match(paramPattern))) {
-        const [_, key, value] = match;
+        const [, key, value] = match;
         const target = section ? section.value : root.value;
 
         target.push({ type: "param", key, value, lineno });
       } else if ((match = line.match(sectionPattern))) {
-        const [_, name] = match;
+        const [, name] = match;
         section = { type: "section", name, value: [], lineno };
 
         root.value.push(section);
