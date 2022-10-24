@@ -1,6 +1,6 @@
-import { builders } from "prettier/doc";
+import doc from "prettier/doc";
 
-const { group, hardline, join } = builders;
+const { group, hardline, join } = doc.builders;
 
 const printer = {
   print(path, opts, print) {

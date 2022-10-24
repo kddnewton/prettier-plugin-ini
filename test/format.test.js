@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
-import * as prettier from "prettier";
-import plugin from "../src/plugin";
+import prettier from "prettier";
+import plugin from "../src/plugin.js";
 
 const fixtureFiles = ["with-sections", "no-sections"];
 
@@ -17,13 +17,13 @@ fixtureFiles.forEach((fixtureFile) => {
   const fixture = readFileSync(fixturePath, "utf-8");
 
   describe(`${fixtureFile}:`, () => {
-    test("defaults", () => {
-      const formatted = format(fixture, { iniSpaceAroundEquals: false });
+    test("defaults", async () => {
+      const formatted = await format(fixture, { iniSpaceAroundEquals: false });
       expect(formatted).toMatchSnapshot();
     });
 
-    test("with space around equals", () => {
-      const formatted = format(fixture, { iniSpaceAroundEquals: true });
+    test("with space around equals", async () => {
+      const formatted = await format(fixture, { iniSpaceAroundEquals: true });
       expect(formatted).toMatchSnapshot();
     });
   });
