@@ -1,13 +1,13 @@
-import fs from "node:fs";
-import path from "node:path";
+const fs = require("node:fs");
+const path = require("node:path");
 
-import LinguistLanguages from "linguist-languages";
-import prettier, { SupportLanguage } from "prettier";
+const linguistLanguages = require("linguist-languages");
+const prettier = require("prettier");
 
 function getSupportLanguages() {
-  const supportLanguages: SupportLanguage[] = [];
+  const supportLanguages = [];
 
-  for (const language of Object.values(LinguistLanguages)) {
+  for (const language of Object.values(linguistLanguages)) {
     if (language.aceMode === "ini") {
       const { type, color, aceMode, languageId, ...config } = language;
 
@@ -25,15 +25,12 @@ function getSupportLanguages() {
 }
 
 const languages = JSON.stringify(getSupportLanguages());
-const source = `import { SupportLanguage } from "prettier";
-const languages: SupportLanguage[] = ${languages};
-export default languages;`;
 
 const packagePath = path.join(path.dirname(__dirname), "package.json");
 const packageConfig = JSON.parse(fs.readFileSync(packagePath, "utf8"));
 const { plugins, ...prettierConfig } = packageConfig.prettier;
 
 fs.writeFileSync(
-  "src/languages.ts",
-  prettier.format(source, { parser: "typescript", ...prettierConfig })
+  "src/languages.js",
+  prettier.format(`module.exports = ${languages};`, { parser: "babel", ...prettierConfig })
 );

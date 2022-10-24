@@ -2,13 +2,10 @@
   "name": "prettier-plugin-ini",
   "version": "1.1.0",
   "description": "prettier plugin for INI files",
-  "main": "dist/plugin.js",
-  "types": "dist/plugin.d.ts",
+  "main": "src/plugin.js",
   "scripts": {
     "lint": "eslint --cache .",
-    "prepublishOnly": "tsc -p tsconfig.build.json",
-    "prepare": "tsx bin/languages",
-    "print": "prettier --plugin=.",
+    "prepare": "node bin/languages.js",
     "test": "jest"
   },
   "repository": {
@@ -16,9 +13,6 @@
     "url": "git+https://github.com/kddnewton/prettier-plugin-ini.git"
   },
   "author": "Kevin Newton",
-  "contributors": [
-    "JounQin (https://www.1stG.me) <admin@1stg.me>"
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kddnewton/prettier-plugin-ini/issues"
@@ -28,17 +22,9 @@
     "prettier": ">=2.3"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.0",
-    "@types/node": "^18.0.0",
-    "@types/prettier": "^2.3.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "jest": "^27.0.1",
-    "linguist-languages": "^7.21.0",
-    "ts-jest": "^27.0.2",
-    "tsx": "^3.7.1",
-    "typescript": "^4.4.4"
+    "linguist-languages": "^7.21.0"
   },
   "eslintConfig": {
     "env": {
@@ -47,29 +33,14 @@
       "jest": true
     },
     "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          "ignoreRestSiblings": true,
-          "varsIgnorePattern": "^_"
-        }
-      ]
-    }
+      "eslint:recommended"
+    ]
   },
   "eslintIgnore": [
     "dist"
   ],
   "jest": {
-    "preset": "ts-jest",
-    "testRegex": ".test.ts$"
+    "testRegex": ".test.js$"
   },
   "prettier": {
     "plugins": [

@@ -1,16 +1,9 @@
-import type { Doc, ParserOptions, Printer } from "prettier";
-import { builders } from "prettier/doc";
-
-import type { AST } from "./parser";
+const { builders } = require("prettier/doc");
 
 const { group, hardline, join } = builders;
 
-export interface INIOptions extends ParserOptions<AST> {
-  iniSpaceAroundEquals: boolean;
-}
-
-const printer: Printer<AST> = {
-  print(path, opts: INIOptions, print) {
+const printer = {
+  print(path, opts, print) {
     const node = path.getValue();
 
     switch (node.type) {
@@ -22,7 +15,7 @@ const printer: Printer<AST> = {
         return group([node.key, delimiter, node.value]);
       }
       case "root": {
-        const lines: Doc[] = [];
+        const lines = [];
 
         path.each((childPath, index) => {
           const childNode = childPath.getValue();
@@ -47,4 +40,4 @@ const printer: Printer<AST> = {
   }
 };
 
-export default printer;
+module.exports = printer;

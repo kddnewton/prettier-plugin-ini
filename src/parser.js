@@ -1,22 +1,8 @@
-import type { Parser } from "prettier";
-
 const sectionPattern = /^\s*\[\s*([^\]]*)\s*\]\s*$/;
 const paramPattern = /^\s*([^=]+?)\s*=\s*(.*?)\s*$/;
 const commentPattern = /^\s*[;#].*$/;
 
-type Comment = { type: "comment"; value: string; lineno: number };
-type Param = { type: "param"; key: string; value: string; lineno: number };
-type Root = { type: "root"; value: (Comment | Param | Section)[] };
-type Section = {
-  type: "section";
-  name: string;
-  value: (Comment | Param)[];
-  lineno: number;
-};
-
-export type AST = Comment | Param | Root | Section;
-
-const parser: Parser<AST> = {
+const parser = {
   astFormat: "ini",
   locStart() {
     return 0;
@@ -25,9 +11,9 @@ const parser: Parser<AST> = {
     return 0;
   },
   parse(text) {
-    const root: Root = { type: "root", value: [] };
+    const root = { type: "root", value: [] };
 
-    let section: Section | null = null;
+    let section = null;
     let match;
 
     text.split(/[\r\n]+/).forEach((line, index) => {
@@ -58,4 +44,4 @@ const parser: Parser<AST> = {
   }
 };
 
-export default parser;
+module.exports = parser;

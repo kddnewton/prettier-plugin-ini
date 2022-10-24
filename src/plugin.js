@@ -1,10 +1,8 @@
-import type { Plugin } from "prettier";
+const languages = require("./languages");
+const parser = require("./parser");
+const printer = require("./printer");
 
-import languages from "./languages";
-import parser from "./parser";
-import printer from "./printer";
-
-const plugin: Plugin = {
+const plugin = {
   languages,
   parsers: {
     ini: parser
@@ -28,4 +26,4 @@ const plugin: Plugin = {
   }
 };
 
-export = plugin;
+module.exports = plugin;

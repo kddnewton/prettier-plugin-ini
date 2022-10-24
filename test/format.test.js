@@ -1,17 +1,15 @@
-import fs from "fs";
-import path from "path";
-import prettier from "prettier";
-
-import { INIOptions } from "../src/printer";
-import plugin from "../src/plugin";
+const fs = require("fs");
+const path = require("path");
+const prettier = require("prettier");
+const plugin = require("../src/plugin");
 
 const fixtureFiles = ["with-sections", "no-sections"];
 
-function format(content: string, options: Partial<INIOptions>) {
+function format(content, opts) {
   return prettier.format(content, {
     parser: "ini",
     plugins: [plugin],
-    ...options
+    ...opts
   });
 }
 
