@@ -5,7 +5,7 @@
     <img alt="Gitter" src="https://img.shields.io/gitter/room/jlongster/prettier.svg?style=flat-square">
   </a>
   <a href="https://github.com/kddnewton/prettier-plugin-ini/actions">
-    <img alt="GitHub Actions" src="https://img.shields.io/github/workflow/status/kddnewton/prettier-plugin-ini/Main?style=flat-square">
+    <img alt="GitHub Actions" src="https://img.shields.io/github/actions/workflow/status/kddnewton/prettier-plugin-ini/main.yml?branch=main&style=flat-square">
   </a>
   <a href="https://www.npmjs.com/package/prettier-plugin-ini">
     <img alt="NPM Version" src="https://img.shields.io/npm/v/prettier-plugin-ini.svg?style=flat-square">
