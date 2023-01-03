@@ -21,7 +21,7 @@ const parser = {
       lineno += 1;
 
       if (line.trim().length === 0) {
-        // ignore empty lines
+        section = null;
       } else if (commentPattern.test(line)) {
         const target = section ? section.value : root.value;
 
@@ -54,8 +54,6 @@ const parser = {
         };
 
         root.value.push(section);
-      } else if (line.trim().length === 0) {
-        section = null;
       } else {
         throw new Error(`Error parsing .ini on line ${lineno}:\n${line}`);
       }
