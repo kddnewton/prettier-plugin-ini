@@ -1,6 +1,6 @@
 import * as doc from "prettier/doc";
 
-const { group, hardline, join } = doc.builders;
+const { hardline } = doc.builders;
 
 const printer = {
   print(path, opts, print) {
@@ -9,33 +9,35 @@ const printer = {
     switch (node.type) {
       case "comment":
         return node.value;
-      case "param": {
-        const delimiter = opts.iniSpaceAroundEquals ? " = " : "=";
-
-        return group([node.key, delimiter, node.value]);
-      }
-      case "root": {
-        const lines = [];
-
-        path.each((childPath, index) => {
-          const childNode = childPath.getValue();
-
-          if (index > 0 && childNode.type === "section") {
-            lines.push([hardline, print(childPath)]);
-          } else {
-            lines.push(print(childPath));
-          }
-        }, "value");
-
-        return [join(hardline, lines), hardline];
-      }
+      case "param":
+        return [node.key, opts.iniSpaceAroundEquals ? " = " : "=", node.value];
+      case "root":
+        return [printLines(), hardline];
       case "section":
-        return join(hardline, [
-          ["[", node.name, "]"],
-          ...path.map(print, "value")
-        ]);
+        return [["[", node.name, "]"], hardline, printLines()];
       default:
         throw new Error("Unsupported node.");
+    }
+
+    function printLines() {
+      const lines = [];
+      let currentLine = null;
+
+      path.each((childPath) => {
+        const childNode = childPath.getValue();
+
+        if (currentLine !== null) {
+          if (childNode.startLine - currentLine > 1) {
+            lines.push(hardline);
+          }
+          lines.push(hardline);
+        }
+
+        lines.push(print(childPath));
+        currentLine = childNode.endLine;
+      }, "value");
+
+      return lines;
     }
   }
 };

@@ -3,3 +3,4 @@
 .prettierignore
 bin
 test
+test.ini
