@@ -23,28 +23,11 @@
     "prettier": ">=3.0.0-alpha.3"
   },
   "devDependencies": {
-    "eslint": "^8.0.1",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.0.0",
     "jest": "^29.2.1",
     "linguist-languages": "^7.21.0"
   },
-  "eslintConfig": {
-    "env": {
-      "node": true,
-      "jest": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "prettier"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module"
-    }
-  },
-  "eslintIgnore": [
-    "bin"
-  ],
   "jest": {
     "testRegex": ".test.js$",
     "transform": {}
