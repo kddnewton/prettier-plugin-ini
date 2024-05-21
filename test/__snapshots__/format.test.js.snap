@@ -13,6 +13,12 @@ port=143
 file="payroll.dat"
 
 # this is another kind of comment
+
+value=
+  foo
+  bar
+  # comment
+  baz
 "
 `;
 
@@ -29,6 +35,12 @@ port = 143
 file = "payroll.dat"
 
 # this is another kind of comment
+
+value =
+  foo
+  bar
+  # comment
+  baz
 "
 `;
 
@@ -45,6 +57,12 @@ server=192.0.2.62
 port=143
 file="payroll.dat"
 # this is another kind of comment
+
+value=
+  foo
+  bar
+  # comment
+  baz
 "
 `;
 
@@ -61,5 +79,11 @@ server = 192.0.2.62
 port = 143
 file = "payroll.dat"
 # this is another kind of comment
+
+value =
+  foo
+  bar
+  # comment
+  baz
 "
 `;
