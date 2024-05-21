@@ -1,6 +1,6 @@
 import * as doc from "prettier/doc";
 
-const { hardline } = doc.builders;
+const { hardline, indent, join } = doc.builders;
 
 const printer = {
   print(path, opts, print) {
@@ -11,12 +11,20 @@ const printer = {
         return node.value;
       case "param":
         return [node.key, opts.iniSpaceAroundEquals ? " = " : "=", node.value];
+      case "list":
+        return [
+          node.key,
+          opts.iniSpaceAroundEquals ? " =" : "=",
+          indent([hardline, join(hardline, path.map(print, "value"))])
+        ];
       case "root":
         return [printLines(), hardline];
       case "section":
         return [["[", node.name, "]"], hardline, printLines()];
+      case "value":
+        return node.value;
       default:
-        throw new Error("Unsupported node.");
+        throw new Error(`Unsupported node: ${node.type}`);
     }
 
     function printLines() {
