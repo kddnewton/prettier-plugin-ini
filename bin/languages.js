@@ -8,10 +8,20 @@ function getSupportLanguages() {
 
   for (const language of Object.values(linguistLanguages)) {
     if (language.aceMode === "ini") {
-      const { type, color, aceMode, languageId, ...config } = language;
+      const {
+        type,
+        color,
+        aceMode,
+        languageId,
+        filenames = [],
+        ...config
+      } = language;
 
       supportLanguages.push({
         ...config,
+        filenames: filenames.filter(
+          (filename) => filename !== "HOSTS" && filename !== "hosts"
+        ),
         since: "0.1.0",
         parsers: ["ini"],
         linguistLanguageId: languageId,
