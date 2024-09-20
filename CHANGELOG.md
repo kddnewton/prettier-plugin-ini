@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.3.0] - 2024-09-20
+
+### Changed
+
+- Remove `HOSTS` and `hosts` from the list of filenames to format.
+
 ## [1.2.0] - 2024-05-21
 
 ### Added
@@ -48,7 +54,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Initial release 🎉
 
-[unreleased]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/kddnewton/prettier-plugin-ini/compare/v0.3.1...v1.0.0
