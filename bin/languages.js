@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
-import linguistLanguages from "linguist-languages";
+import * as linguistLanguages from "linguist-languages";
 import { format } from "prettier";
-import packageJSON from "../package.json" assert { type: "json" };
+import packageJSON from "../package.json" with { type: "json" };
 
 function getSupportLanguages() {
   const supportLanguages = [];
